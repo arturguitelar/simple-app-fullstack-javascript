@@ -13,6 +13,7 @@ function Home() {
   async function getUsers() {
     const usersFromApi = await api.get('/users');
     setUsers(usersFromApi.data);
+    clearForm();
   }
 
   async function createUser() {
@@ -22,13 +23,19 @@ function Home() {
       email: inputEmail.current.value,
     });
 
-    getUsers();
+    await getUsers();
   }
 
   async function removeUser(id) {
     await api.delete(`/users/${id}`);
 
-    getUsers();
+    await getUsers();
+  }
+
+  function clearForm() {
+    inputName.current.value = '';
+    inputAge.current.value = '';
+    inputEmail.current.value = '';
   }
 
   useEffect(() => {
