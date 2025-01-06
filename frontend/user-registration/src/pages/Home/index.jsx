@@ -1,27 +1,20 @@
+import { useEffect, useState } from 'react';
 import './style.css';
 import ReactIcon from '../../assets/react.svg';
+import api from '../../services/api';
 
 function Home() {
-  const users = [
-    {
-      id: 1,
-      name: 'asdasdsad',
-      age: '15',
-      email: 'asas@wqwqw.com',
-    },
-    {
-      id: 2,
-      name: 'asdasdsad',
-      age: '15',
-      email: 'asas@wqwqw.com',
-    },
-    {
-      id: 2,
-      name: 'asdasdsad',
-      age: '15',
-      email: 'asas@wqwqw.com',
-    },
-  ];
+  const [users, setUsers] = useState([]);
+
+  async function getUsers() {
+    const usersFromApi = await api.get('/users');
+    setUsers(usersFromApi.data);
+  }
+
+  useEffect(() => {
+    getUsers();
+  }, []);
+
   return (
     <div className="container">
       <form action="">
