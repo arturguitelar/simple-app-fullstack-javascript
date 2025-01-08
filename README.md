@@ -1,4 +1,4 @@
-# Simple app fullstack jasvascript
+# Simple app fullstack javascript
 
 A simple fullstack javascript project.
 
