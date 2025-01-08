@@ -1,0 +1,33 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px;
+  border: 1px solid whitesmoke;
+  border-radius: 10px;
+  max-width: 50%;
+  width: 400px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  h1 {
+    display: inline-flex;
+    gap: 10px;
+    font-size: 32px;
+  }
+
+  & input {
+    padding: 8px;
+    height: 40px;
+  }
+}
+
+.result {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 50%;
+  width: 400px;
+  padding: 20px 0;
+  border-bottom: 1px solid black;
+}
